@@ -16,7 +16,7 @@ function currentDay() {
   let lon = 105.8412;
   let lat = 21.0245;
 
-  const check = document.querySelector(".check");
+  const check = document.querySelector(".Minh_check");
 
   check.onclick = () => {
     const value_input = document.querySelector("#Minh_Left input").value;
@@ -30,27 +30,27 @@ function currentDay() {
         lon = data.coord.lon;
         lat = data.coord.lat;
             console.log(data)
-        const nameCity = document.querySelector('.name')
-        const temp = document.querySelector('#temp .temp')
+        const nameCity = document.querySelector('.Minh_name')
+        const temp = document.querySelector('#Minh_temp .Minh_temp')
         temp.innerHTML = `${Math.floor(data.main.temp)}°C`
         nameCity.innerHTML = data.name
 
-        const img_icon = document.querySelector('#Minh_Left .icon')
+        const img_icon = document.querySelector('#Minh_Left .Minh_icon')
         img_icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
 
-        const feel = document.querySelector('#Minh_Left .feel')
+        const feel = document.querySelector('#Minh_Left .Minh_feel')
         feel.innerHTML = `Feels like ${data.main.feels_like}°C ${data.weather[0].main}. ${data.weather[0].description}`
 
-        const speed = document.querySelector('#Minh_Left .speed')
+        const speed = document.querySelector('#Minh_Left .Minh_speed')
         speed.innerHTML = `${data.wind.speed}m/s SE`
 
         const Pa = document.querySelector('#Minh_Left .Pa')
         Pa.innerHTML = `${data.main.pressure}hPa`
 
-        const humidity = document.querySelector('#Minh_Left .humidity')
+        const humidity = document.querySelector('#Minh_Left .Minh_humidity')
         humidity.innerHTML = `${data.main.humidity}%`
 
-        const visible = document.querySelector('#Minh_Left .visible')
+        const visible = document.querySelector('#Minh_Left .Minh_visible')
         visible.innerHTML = `${data.visibility/1000}km`
 
       } catch (error) {
@@ -75,7 +75,7 @@ function currentDay() {
     let Minh_list_temperature_min = data.daily.temperature_2m_min;
 
     const Minh_listItem = document.querySelector(".Minh_listItem");
-    const time = document.querySelector("#Minh_Weather .time");
+    const time = document.querySelector("#Minh_Weather .Minh_time");
     const current_Month = a.getMonth();
     
     const months = [
@@ -134,7 +134,7 @@ function currentDay() {
       ]
       const current_weather = Math.floor(Math.random() * 3);
       // console.log(current_weather)
-      item.innerHTML += `<div class = 'temp'>${
+      item.innerHTML += `<div class = 'Minh_temp'>${
         icon_Weather[current_weather]
       } ${Math.floor(Minh_list_temperature_max[index])}/${Math.floor(
         Minh_list_temperature_min[index]

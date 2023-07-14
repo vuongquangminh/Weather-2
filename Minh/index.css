@@ -41,18 +41,18 @@ body {
     font-size: 15px;
     font-weight: 700;
 }
-#Minh_Right .temp {
+#Minh_Right .Minh_temp {
     display: flex;
     align-items: center;
 }
-#Minh_Left p.temp {
+#Minh_Left p.Minh_temp {
     display: flex;
     align-items: center;
     font-size: 30px;
     font-weight: 500;
     color: #48484a;
 }
-#Minh_Left #temp {
+#Minh_Left #Minh_temp {
     display: flex;
     align-items: center;
     margin-top: 20px;
@@ -68,27 +68,27 @@ body {
     margin-bottom: 5px;
     color: #48484a;
 }
-#Minh_Left p.feel {
+#Minh_Left p.Minh_feel {
     font-size: 14px;
     font-weight: 600;
     color: #48484a;
 }
-#Minh_Left .detail {
+#Minh_Left .Minh_detail {
     display: flex;
     align-items: center;
 }
 
-#Minh_Left .detail p {
+#Minh_Left .Minh_detail p {
     padding: 3px 12px;
     margin: 0;
     font-size: 12px;
 }
-#Minh_Left .detail span {
+#Minh_Left .Minh_detail span {
     margin: 0;
     font-size: 12px;
 }
 
-#Minh_Left .detail .gio {
+#Minh_Left .Minh_detail .gio {
     min-width: 93px;
 }
 
@@ -107,7 +107,7 @@ p {
     justify-content: center;
   }
 
-.minmaxContainer {
+.Minh_minmaxContainer {
     border-left: 1px solid red;
     margin-top: 8px;
 }
