@@ -54,7 +54,7 @@ function currentDay() {
         visible.innerHTML = `${data.visibility/1000}km`
 
       } catch (error) {
-        console.log("ban da nhap sai");
+        alert("chưa cập nhật!");
       }
     };
     const Minh_listItem = document.querySelector('.Minh_listItem')
