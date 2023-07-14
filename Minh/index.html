@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Minh_Weather">
+        <div id="Minh_Left">
+            <div class="input">
+                <input type="text" value="" placeholder="nhap du lieu">
+            </div>
+            <button class="check">click me</button>
+
+            <div class="app">
+                <div class="cardContainer">
+                    <div class="card">
+                        <p class="time">Jul 13, 10:31pm</p>
+
+                        <p class="name">Hanoi, VN</p>
+                        <div id='temp'>
+                            <img class="icon" src="	https://openweathermap.org/img/wn/01n.png" alt="">
+                            <p class="temp">32°C</p>
+                        </div>
+                        <p class="feel">Feels like 38°C. Overcast clouds. Gentle Breeze </p>
+
+                        <div class="minmaxContainer">
+                            <div class="detail"> <p class ="speed"> 4.8m/s SE<p><span class= "Pa">1004hPa</span> </div>
+                            <div class="detail"> <p>Humidity: </p><span class='humidity'>71%</span> <p>Dew point: </p><span  class="suong">25°C</span></div>
+                            <div class="detail"> <p>Visibility: </p><span  class='visible'>10.0km</span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="Minh_Right">
+            <p>8-day forecast</p>
+            <div class="Minh_listItem">
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./component/dubao.js"></script>
+    <!-- <script type="module" src="./component/search.js"></script> -->
+</body>
+
+</html>

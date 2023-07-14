@@ -1,0 +1,127 @@
+body {
+    font-family: "Space Grotesk", Arial, sans-serif;
+}
+
+/* Search */
+.loading-wave {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .text-danger {
+    color: red;
+  }
+
+#Minh_Right {
+    display: inline-block;
+}
+
+.Minh_listItem {
+
+}
+#Minh_Right .Minh_item {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 5px;
+}
+#Minh_Right .Minh_item:hover {
+    background-color: rgba(72,72,74,.05);
+}
+#Minh_Right .Minh_item p {
+    min-width: 120px;
+    margin: 5px 0;
+    font-size: 13px;
+    color: #48484a;
+}
+#Minh_Right>p {
+    font-size: 15px;
+    font-weight: 700;
+}
+#Minh_Right .temp {
+    display: flex;
+    align-items: center;
+}
+#Minh_Left p.temp {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: #48484a;
+}
+#Minh_Left #temp {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+#Minh_Left p.time {
+    font-size: 12px;
+    color: #eb6e4b;
+    margin-bottom: 3px;
+}
+#Minh_Left p.name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #48484a;
+}
+#Minh_Left p.feel {
+    font-size: 14px;
+    font-weight: 600;
+    color: #48484a;
+}
+#Minh_Left .detail {
+    display: flex;
+    align-items: center;
+}
+
+#Minh_Left .detail p {
+    padding: 3px 12px;
+    margin: 0;
+    font-size: 12px;
+}
+#Minh_Left .detail span {
+    margin: 0;
+    font-size: 12px;
+}
+
+#Minh_Left .detail .gio {
+    min-width: 93px;
+}
+
+/* Search */
+div#Minh_Weather {
+    display: flex;
+    justify-content: space-evenly;
+}
+p {
+    margin: 0;
+}
+.cardContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.minmaxContainer {
+    border-left: 1px solid red;
+    margin-top: 8px;
+}
+  
+
+
+#Minh_Right .desc {
+    text-align: end;
+    font-size: 9px !important;
+    font-family: Space Grotesk,Arial,sans-serif;
+    color: #8a8a8a;
+}
+#Minh_Right .drop_icon {
+    margin: 0 5px;
+    font-size: 12px;
+    color: #48484a;
+}
