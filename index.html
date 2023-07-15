@@ -1,72 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./hien_style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header (Hoàn)-->
-    <div id="Hoan_Header">hihi</div>
-
+    <div id="Hoan_Header"></div>
 
     <!-- Chọn địa điểm hiển thị thời tiêt từng nơi và dự báo thời tiết trong vòng 8 ngày (Minh + Công) -->
     <div id="Minh_Weather">
-        <div id="Minh_Left">
-            <div class="input">
-                <input type="text" value="" placeholder="nhap du lieu">
-            </div>
-            <button class="Minh_check">click me</button>
+      <div id="Minh_Left">
+        <div class="input">
+          <input type="text" value="" placeholder="nhap du lieu" />
+        </div>
+        <button class="Minh_check">click me</button>
 
-            <div class="app">
-                <div class="cardContainer">
-                    <div class="Minh_card">
-                        <p class="Minh_time">Jul 13, 10:31pm</p>
+        <div class="app">
+          <div class="cardContainer">
+            <div class="Minh_card">
+              <p class="Minh_time">Jul 13, 10:31pm</p>
 
-                        <p class="Minh_name">Hanoi, VN</p>
-                        <div id='Minh_temp'>
-                            <img class="Minh_icon" src="	https://openweathermap.org/img/wn/01n.png" alt="">
-                            <p class="Minh_temp">32°C</p>
-                        </div>
-                        <p class="Minh_feel">Feels like 38°C. Overcast clouds. Gentle Breeze </p>
+              <p class="Minh_name">Hanoi, VN</p>
+              <div id="Minh_temp">
+                <img
+                  class="Minh_icon"
+                  src="	https://openweathermap.org/img/wn/01n.png"
+                  alt=""
+                />
+                <p class="Minh_temp">32°C</p>
+              </div>
+              <p class="Minh_feel">
+                Feels like 38°C. Overcast clouds. Gentle Breeze
+              </p>
 
-                        <div class="Minh_minmaxContainer">
-                            <div class="Minh_detail"> <p class ="Minh_speed"> 4.8m/s SE<p><span class= "Pa">1004hPa</span> </div>
-                            <div class="Minh_detail"> <p>Humidity: </p><span class='Minh_humidity'>71%</span> <p>Dew point: </p><span  class="suong">25°C</span></div>
-                            <div class="Minh_detail"> <p>Visibility: </p><span  class='Minh_visible'>10.0km</span></div>
-                        </div>
-
-                    </div>
+              <div class="Minh_minmaxContainer">
+                <div class="Minh_detail">
+                  <p class="Minh_speed">4.8m/s SE</p>
+                  <p><span class="Pa">1004hPa</span></p>
                 </div>
+                <div class="Minh_detail">
+                  <p>Humidity:</p>
+                  <span class="Minh_humidity">71%</span>
+                  <p>Dew point:</p>
+                  <span class="suong">25°C</span>
+                </div>
+                <div class="Minh_detail">
+                  <p>Visibility:</p>
+                  <span class="Minh_visible">10.0km</span>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-
-
-
-        <div id="Minh_Right">
-            <p>8-day forecast</p>
-            <div class="Minh_listItem">
-            </div>
-        </div>
+      <div id="Minh_Right">
+        <p>8-day forecast</p>
+        <div class="Minh_listItem"></div>
+      </div>
     </div>
 
     <!-- Phần của a Tuân đặt ở đây nhé (phần trên ok r nên a đừng ấy vào có bug khó sửa nhé) -->
     <div class="Tuan_"></div>
 
     <!-- Content(Tai) -->
-    <div id="Tai"></div>
-
+    <div id="hien_container"></div>
 
     <!-- Footer(Hien) -->
     <div id="Hien_Footer"></div>
 
     <script type="module" src="./dubao.js"></script>
     <!-- <script type="module" src="./component/search.js"></script> -->
-</body>
-
+  </body>
 </html>
