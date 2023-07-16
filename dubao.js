@@ -1,3 +1,5 @@
+import Hien_FnContent from "./hien_scrip.js";
+Hien_FnContent();
 function currentDay() {
   //set up ngày bắt đầu và ngày kết thúc (dự báo trong 1 tuần)
   const a = new Date();
