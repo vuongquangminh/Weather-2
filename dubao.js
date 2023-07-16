@@ -1,3 +1,5 @@
+import Hien_FnContent from "./hien_scrip.js";
+Hien_FnContent();
 function currentDay() {
   //set up ngày bắt đầu và ngày kết thúc (dự báo trong 1 tuần)
   const a = new Date();
@@ -32,11 +34,6 @@ function currentDay() {
         const data = await response.json();
         lon = data.coord.lon;
         lat = data.coord.lat;
-        console.log(data);
-        const nameCity = document.querySelector(".Minh_name");
-        const temp = document.querySelector("#Minh_temp .Minh_temp");
-        temp.innerHTML = `${Math.floor(data.main.temp)}°C`;
-        nameCity.innerHTML = data.name;
         console.log(lat,lon)
         console.log(data);
         const nameCity = document.querySelector(".Minh_name");
@@ -47,24 +44,23 @@ function currentDay() {
         const img_icon = document.querySelector("#Minh_Left .Minh_icon");
         img_icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-        const img_icon = document.querySelector('#Minh_Left .Minh_icon')
-        img_icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+        const feel = document.querySelector("#Minh_Left .Minh_feel");
+        feel.innerHTML = `Feels like ${data.main.feels_like}°C ${data.weather[0].main}. ${data.weather[0].description}`;
 
-        const feel = document.querySelector('#Minh_Left .Minh_feel')
-        feel.innerHTML = `Feels like ${data.main.feels_like}°C ${data.weather[0].main}. ${data.weather[0].description}`
+        const speed = document.querySelector("#Minh_Left .Minh_speed");
+        speed.innerHTML = `${data.wind.speed}m/s SE`;
 
-        const speed = document.querySelector('#Minh_Left .Minh_speed')
-        speed.innerHTML = `${data.wind.speed}m/s SE`
+        const Pa = document.querySelector("#Minh_Left .Pa");
+        Pa.innerHTML = `${data.main.pressure}hPa`;
 
-        const Pa = document.querySelector('#Minh_Left .Pa')
-        Pa.innerHTML = `${data.main.pressure}hPa`
+        const humidity = document.querySelector("#Minh_Left .Minh_humidity");
+        humidity.innerHTML = `${data.main.humidity}%`;
 
-        const humidity = document.querySelector('#Minh_Left .Minh_humidity')
-        humidity.innerHTML = `${data.main.humidity}%`
-
-        const visible = document.querySelector('#Minh_Left .Minh_visible')
-        visible.innerHTML = `${data.visibility/1000}km`
-
+        const visible = document.querySelector("#Minh_Left .Minh_visible");
+        visible.innerHTML = `${data.visibility / 1000}km`;
+        
+        
+        getMap(lat, lon)
       } catch (error) {
         alert("chưa cập nhật!");
       }
@@ -72,8 +68,40 @@ function currentDay() {
     const Minh_listItem = document.querySelector(".Minh_listItem");
     Minh_listItem.innerHTML = "";
     getL();
-    getApi()
+    getApi();
+    
   };
+
+  
+  // map()
+
+  function getMap(lat, lon) {
+    map.setView([lat, lon], 13);
+    console.log(lat,lon)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var circle = L.circle([lat, lon], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 300
+    }).addTo(map);
+    circle.bindPopup("I am here.");
+
+    var popup = L.popup();
+    function onMapClick(e) {
+        popup.setLatLng(e.latlng).setContent("You clicked the map at " + e.latlng.toString()).openOn(map);
+           let a = popup.setLatLng(e.latlng).setContent( e.latlng.toString()).openOn(map)
+           console.log(a)
+        //     a = a.slice(7,a.length-1)
+        //    console.log(a)
+    }
+    L.marker([lat, lon]).addTo(map)
+    map.on('click', onMapClick);
+  }
 
 
   async function getApi() {
@@ -158,3 +186,229 @@ function currentDay() {
   getMap(lat, lon)
 }
 currentDay();
+
+
+// map
+// navigator.geolocation.getCurrentPosition(showPosition)
+// function showPosition(position) {
+
+//     let latitude = position.coords.latitude;
+//     let longitude = position.coords.longitude;
+//     console.log(latitude,longitude)
+//     var map = L.map('Minh_map')
+//     map.setView([latitude, longitude], 13);
+//     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         maxZoom: 19,
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+//     }).addTo(map);
+
+//     var circle = L.circle([latitude, longitude], {
+//         color: 'red',
+//         fillColor: '#f03',
+//         fillOpacity: 0.5,
+//         radius: 300
+//     }).addTo(map);
+//     circle.bindPopup("I am here.");
+
+//     var popup = L.popup();
+//     function onMapClick(e) {
+//         popup.setLatLng(e.latlng).setContent("You clicked the map at " + e.latlng.toString()).openOn(map);
+//            let a = popup.setLatLng(e.latlng).setContent( e.latlng.toString()).openOn(map)
+//            console.log(a)
+//         //     a = a.slice(7,a.length-1)
+//         //    console.log(a)
+//     }
+    
+//     map.on('click', onMapClick);
+    
+// } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Son
+
+const son = document.getElementById("son");
+const son_container = document.createElement("div");
+son_container.className = "Son_section_container";
+son.appendChild(son_container);
+const son_container_right = document.createElement("div");
+son_container_right.className = "Son_container_right";
+const son_container_left = document.createElement("div");
+son_container_left.className = "Son_Container_left";
+son_container.appendChild(son_container_right);
+const Son_Orange_Text = document.createElement("span");
+Son_Orange_Text.className = "Son_Orange_Text";
+const Son_Orange_Text_node = document.createTextNode("Weather data");
+Son_Orange_Text.appendChild(Son_Orange_Text_node);
+son_container_right.appendChild(Son_Orange_Text);
+const Son_h2 = document.createElement("h2");
+Son_h2.className = "Son_h2";
+const Son_h2_node = document.createTextNode(
+  "Weather for any geographic coordinates on the globe"
+);
+Son_h2.appendChild(Son_h2_node);
+son_container_right.appendChild(Son_h2);
+const Son_img = document.createElement("img");
+Son_img.className = "Son_feature_img";
+Son_img.src = "assets/img/historical_data_any_location (1).png";
+son_container_right.appendChild(Son_img);
+son_container.appendChild(son_container_left);
+const Son_p1 = document.createElement("p");
+const Son_p1_node = document.createTextNode(
+  "For each point on the globe, we provide historical, current and forecasted weather data via light-speed APIs."
+);
+Son_p1.appendChild(Son_p1_node);
+son_container_left.appendChild(Son_p1);
+const Son_p2 = document.createElement("p");
+const Son_p2_b = document.createElement("b");
+const Son_p2_b_a = document.createElement("a");
+Son_p2_b_a.href = "https://openweathermap.org/api/one-call-3";
+const Son_p2_node = document.createTextNode("Minute-by-minute forecast");
+Son_p2_b_a.appendChild(Son_p2_node);
+Son_p2_b.appendChild(Son_p2_b_a);
+Son_p2.appendChild(Son_p2_b);
+son_container_left.appendChild(Son_p2);
+const Son_p3 = document.createElement("p");
+const Son_p3_b1 = document.createElement("b");
+const Son_p3_b1_node = document.createTextNode("Other forecasts:");
+Son_p3_b1.appendChild(Son_p3_b1_node);
+Son_p3.appendChild(Son_p3_b1);
+const Son_p3_br1 = document.createElement("br");
+Son_p3.appendChild(Son_p3_br1);
+const Son_p3_node = document.createTextNode(
+  "hourly (4-day), daily (16-day), 30-day climate forecast"
+);
+Son_p3.appendChild(Son_p3_node);
+son_container_left.appendChild(Son_p3);
+const Son_p4 = document.createElement("p");
+const Son_p4_b = document.createElement("b");
+const Son_p4_b_a = document.createElement("a");
+Son_p4_b_a.href = "https://openweathermap.org/history-bulk";
+const Son_p4_a_node = document.createTextNode("Historical data");
+Son_p4_b_a.appendChild(Son_p4_a_node);
+Son_p4_b.appendChild(Son_p4_b_a);
+Son_p4.appendChild(Son_p4_b);
+const Son_p4_br = document.createElement("br");
+Son_p4.appendChild(Son_p4_br);
+const Son_p4_node = document.createTextNode(
+  "with 40-year archive for any coordinates"
+);
+Son_p4.appendChild(Son_p4_node);
+son_container_left.appendChild(Son_p4);
+//Hoanpv
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+// dbmenu
+const MENU = {
+  menu: [
+    {
+      class: "menu_link",
+      name: "Guide",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "API",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Dashboard",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Marketplace",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Pricing",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Maps",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Our Initiatives",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Partners",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Blog",
+      link: "#",
+    },
+    {
+      class: "menu_link btn btn-secondary btnBusiness",
+      name: "For Business",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Sign in",
+      link: "./login.html",
+    },
+  ],
+
+  hoan_renderMenu: function () {
+    const htmls = this.menu.map((menu) => {
+      return ` <li class="${menu.class}">
+    <a href="${menu.link}">${menu.name}</a>
+  </li>`;
+    });
+    $(".menu_nav").innerHTML = htmls.join("\n");
+    $(".menu_nav_mobile").innerHTML = htmls.join("\n");
+  },
+
+  start: function () {
+    this.hoan_renderMenu();
+  },
+};
+MENU.start();
+
+setInterval(function randomImage() {
+  var images = [
+    "./assets/img/da-nang.jpg",
+    "./assets/img/sapa2.jpg",
+    "./assets/img/Ha-Giang.png",
+    "./assets/img/Ha-Long.png",
+    "./assets/img/ninh-binh.jpg",
+    "./assets/img/thai-nguyen.jpg",
+  ];
+  var size = images.length;
+  var x = Math.floor(size * Math.random());
+  console.log(x);
+  var element = document.getElementById("hoan_banner");
+  console.log(element);
+  element.style = `background: url(${images[x]}) no-repeat;`;
+}, 10000);
+// document.addEventListener("DOMContentLoaded", randomImage);
+
+const showNav = $(".bar_moblie");
+const listNav = $("#nav-mobile-res");
+showNav.addEventListener("click", showNavMobile);
+function showNavMobile() {
+  listNav.classList.toggle("d-none");
+}
