@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>OpenWeather</title>
 </head>
 
 <body>
     <!-- Header (Hoàn)-->
-    <div id="Hoan_Header">hihi</div>
+    <div id="Hoan_Header"></div>
 
 
     <!-- Chọn địa điểm hiển thị thời tiêt từng nơi và dự báo thời tiết trong vòng 8 ngày (Minh + Công) -->
+    <div class="Minh_input">
+        <input placeholder="Searth the internet..." type="text" name="text" class="input">
+        <button class="button Minh_check" type="button">Search</button>        
+    </div>
     <div id="Minh_Weather">
         <div id="Minh_Left">
-            <div class="input">
-                <input type="text" value="" placeholder="nhap du lieu">
-            </div>
-            <button class="Minh_check">click me</button>
-
             <div class="app">
                 <div class="cardContainer">
                     <div class="Minh_card">
@@ -43,8 +47,8 @@
                     </div>
                 </div>
             </div>
+            <div id="Minh_map"></div>
         </div>
-
 
 
 
@@ -62,7 +66,9 @@
     <div id="son" class="Son_section"></div>
     
     <!-- Content(Tai) -->
-    <div id="Tai"></div>
+    <div id="Tai">
+    
+    </div>
 
 
     <!-- Footer(Hien) -->

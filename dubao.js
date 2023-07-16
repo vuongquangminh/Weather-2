@@ -18,9 +18,12 @@ function currentDay() {
 
   const check = document.querySelector(".Minh_check");
 
+  let map = L.map('Minh_map')
+
   check.onclick = () => {
-    const value_input = document.querySelector("#Minh_Left input").value;
+    const value_input = document.querySelector(".Minh_input input").value;
     // Value input
+    console.log(value_input)
     const getL = async () => {
       try {
         const response = await fetch(
@@ -34,24 +37,34 @@ function currentDay() {
         const temp = document.querySelector("#Minh_temp .Minh_temp");
         temp.innerHTML = `${Math.floor(data.main.temp)}°C`;
         nameCity.innerHTML = data.name;
+        console.log(lat,lon)
+        console.log(data);
+        const nameCity = document.querySelector(".Minh_name");
+        const temp = document.querySelector("#Minh_temp .Minh_temp");
+        temp.innerHTML = `${Math.floor(data.main.temp)}°C`;
+        nameCity.innerHTML = data.name;
 
         const img_icon = document.querySelector("#Minh_Left .Minh_icon");
         img_icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-        const feel = document.querySelector("#Minh_Left .Minh_feel");
-        feel.innerHTML = `Feels like ${data.main.feels_like}°C ${data.weather[0].main}. ${data.weather[0].description}`;
+        const img_icon = document.querySelector('#Minh_Left .Minh_icon')
+        img_icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
 
-        const speed = document.querySelector("#Minh_Left .Minh_speed");
-        speed.innerHTML = `${data.wind.speed}m/s SE`;
+        const feel = document.querySelector('#Minh_Left .Minh_feel')
+        feel.innerHTML = `Feels like ${data.main.feels_like}°C ${data.weather[0].main}. ${data.weather[0].description}`
 
-        const Pa = document.querySelector("#Minh_Left .Pa");
-        Pa.innerHTML = `${data.main.pressure}hPa`;
+        const speed = document.querySelector('#Minh_Left .Minh_speed')
+        speed.innerHTML = `${data.wind.speed}m/s SE`
 
-        const humidity = document.querySelector("#Minh_Left .Minh_humidity");
-        humidity.innerHTML = `${data.main.humidity}%`;
+        const Pa = document.querySelector('#Minh_Left .Pa')
+        Pa.innerHTML = `${data.main.pressure}hPa`
 
-        const visible = document.querySelector("#Minh_Left .Minh_visible");
-        visible.innerHTML = `${data.visibility / 1000}km`;
+        const humidity = document.querySelector('#Minh_Left .Minh_humidity')
+        humidity.innerHTML = `${data.main.humidity}%`
+
+        const visible = document.querySelector('#Minh_Left .Minh_visible')
+        visible.innerHTML = `${data.visibility/1000}km`
+
       } catch (error) {
         alert("chưa cập nhật!");
       }
@@ -59,8 +72,9 @@ function currentDay() {
     const Minh_listItem = document.querySelector(".Minh_listItem");
     Minh_listItem.innerHTML = "";
     getL();
-    getApi();
+    getApi()
   };
+
 
   async function getApi() {
     const response = await fetch(
@@ -141,75 +155,6 @@ function currentDay() {
     });
   }
   getApi();
+  getMap(lat, lon)
 }
 currentDay();
-
-//Son
-const son = document.getElementById("son");
-const son_container = document.createElement("div");
-son_container.className = "Son_section_container";
-son.appendChild(son_container);
-const son_container_right = document.createElement("div");
-son_container_right.className = "Son_container_right";
-const son_container_left = document.createElement("div");
-son_container_left.className = "Son_Container_left";
-son_container.appendChild(son_container_right);
-const Son_Orange_Text = document.createElement("span");
-Son_Orange_Text.className = "Son_Orange_Text";
-const Son_Orange_Text_node = document.createTextNode("Weather data");
-Son_Orange_Text.appendChild(Son_Orange_Text_node);
-son_container_right.appendChild(Son_Orange_Text);
-const Son_h2 = document.createElement("h2");
-Son_h2.className = "Son_h2";
-const Son_h2_node = document.createTextNode(
-  "Weather for any geographic coordinates on the globe"
-);
-Son_h2.appendChild(Son_h2_node);
-son_container_right.appendChild(Son_h2);
-const Son_img = document.createElement("img");
-Son_img.className = "Son_feature_img";
-Son_img.src = "assets/img/historical_data_any_location (1).png";
-son_container_right.appendChild(Son_img);
-son_container.appendChild(son_container_left);
-const Son_p1 = document.createElement("p");
-const Son_p1_node = document.createTextNode(
-  "For each point on the globe, we provide historical, current and forecasted weather data via light-speed APIs."
-);
-Son_p1.appendChild(Son_p1_node);
-son_container_left.appendChild(Son_p1);
-const Son_p2 = document.createElement("p");
-const Son_p2_b = document.createElement("b");
-const Son_p2_b_a = document.createElement("a");
-Son_p2_b_a.href = "https://openweathermap.org/api/one-call-3";
-const Son_p2_node = document.createTextNode("Minute-by-minute forecast");
-Son_p2_b_a.appendChild(Son_p2_node);
-Son_p2_b.appendChild(Son_p2_b_a);
-Son_p2.appendChild(Son_p2_b);
-son_container_left.appendChild(Son_p2);
-const Son_p3 = document.createElement("p");
-const Son_p3_b1 = document.createElement("b");
-const Son_p3_b1_node = document.createTextNode("Other forecasts:");
-Son_p3_b1.appendChild(Son_p3_b1_node);
-Son_p3.appendChild(Son_p3_b1);
-const Son_p3_br1 = document.createElement("br");
-Son_p3.appendChild(Son_p3_br1);
-const Son_p3_node = document.createTextNode(
-  "hourly (4-day), daily (16-day), 30-day climate forecast"
-);
-Son_p3.appendChild(Son_p3_node);
-son_container_left.appendChild(Son_p3);
-const Son_p4 = document.createElement("p");
-const Son_p4_b = document.createElement("b");
-const Son_p4_b_a = document.createElement("a");
-Son_p4_b_a.href = "https://openweathermap.org/history-bulk";
-const Son_p4_a_node = document.createTextNode("Historical data");
-Son_p4_b_a.appendChild(Son_p4_a_node);
-Son_p4_b.appendChild(Son_p4_b_a);
-Son_p4.appendChild(Son_p4_b);
-const Son_p4_br = document.createElement("br");
-Son_p4.appendChild(Son_p4_br);
-const Son_p4_node = document.createTextNode(
-  "with 40-year archive for any coordinates"
-);
-Son_p4.appendChild(Son_p4_node);
-son_container_left.appendChild(Son_p4);
