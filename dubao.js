@@ -306,3 +306,107 @@ const Son_p4_node = document.createTextNode(
 );
 Son_p4.appendChild(Son_p4_node);
 son_container_left.appendChild(Son_p4);
+//Hoanpv
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+// dbmenu
+const MENU = {
+  menu: [
+    {
+      class: "menu_link",
+      name: "Guide",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "API",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Dashboard",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Marketplace",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Pricing",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Maps",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Our Initiatives",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Partners",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Blog",
+      link: "#",
+    },
+    {
+      class: "menu_link btn btn-secondary btnBusiness",
+      name: "For Business",
+      link: "#",
+    },
+    {
+      class: "menu_link",
+      name: "Sign in",
+      link: "./login.html",
+    },
+  ],
+
+  hoan_renderMenu: function () {
+    const htmls = this.menu.map((menu) => {
+      return ` <li class="${menu.class}">
+    <a href="${menu.link}">${menu.name}</a>
+  </li>`;
+    });
+    $(".menu_nav").innerHTML = htmls.join("\n");
+    $(".menu_nav_mobile").innerHTML = htmls.join("\n");
+  },
+
+  start: function () {
+    this.hoan_renderMenu();
+  },
+};
+MENU.start();
+
+setInterval(function randomImage() {
+  var images = [
+    "./assets/img/da-nang.jpg",
+    "./assets/img/sapa2.jpg",
+    "./assets/img/Ha-Giang.png",
+    "./assets/img/Ha-Long.png",
+    "./assets/img/ninh-binh.jpg",
+    "./assets/img/thai-nguyen.jpg",
+  ];
+  var size = images.length;
+  var x = Math.floor(size * Math.random());
+  console.log(x);
+  var element = document.getElementById("hoan_banner");
+  console.log(element);
+  element.style = `background: url(${images[x]}) no-repeat;`;
+}, 10000);
+// document.addEventListener("DOMContentLoaded", randomImage);
+
+const showNav = $(".bar_moblie");
+const listNav = $("#nav-mobile-res");
+showNav.addEventListener("click", showNavMobile);
+function showNavMobile() {
+  listNav.classList.toggle("d-none");
+}
