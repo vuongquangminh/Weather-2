@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+#hien_container {
+  width: 100%;
+}
+/* Forecasted container */
+.hien_ForecastedStyle {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  background-color: #f2f2f2;
+  justify-content: center;
+}
+/* ForecastedStyle_left */
+.hien_ForecastedStyle_left {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.hien_ForecastedStyle_left_top p {
+  color: rgb(255, 102, 0);
+}
+.hien_ForecastedStyle_left_bottom {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  flex-direction: column;
+  align-items: start;
+}
+.hien_ForecastedStyle_left_bottom--boxcontainer {
+  display: flex;
+}
+.araworange {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid rgb(255, 102, 0);
+  margin-right: 10px;
+}
+.araw {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid gray;
+  margin-right: 10px;
+}
+.hien_Forecasted__left_bottom--boxcontainer_p {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+.backgroundorange {
+  background-color: rgb(255, 102, 0);
+}
+.backgroundgray {
+  background-color: gray;
+}
+.colerorange {
+  background-color: rgb(255, 102, 0);
+}
+.backwhile {
+  color: white;
+}
+/* ForecastedStyle_right*/
+.hien_ForecastedStyle_right {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  height: max-content;
+
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.hien_ForecastedStyle_right_top {
+  padding-top: 30px;
+}
+.hien_ForecastedStyle_right_bottom {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  border-left: 1px solid orangered;
+  padding-left: 20px;
+}
+/* Historical weather data container */
+.hien_HistoricalStyle {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+}
+.hien_HistoricalStyle--left {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.hien_HistoricalStyle--right {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.hien_HistoricalStyle--right p {
+  color: orangered;
+}
+.maketplace {
+  margin-top: 25px;
+}
+.maketplace h4 {
+  margin: 0px;
+}
+.maketplace p {
+  margin: 0px;
+}
