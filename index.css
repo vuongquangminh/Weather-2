@@ -447,8 +447,8 @@ div#Minh_Left {
   box-shadow: 0px 0px 20px -18px;
 }
 .Minh_input {
-    padding: 20px 200px;
-    background-color: #f2f2f2;
+  padding: 20px 200px;
+  background-color: #f2f2f2;
 }
 
 .Minh_input .input:hover {
@@ -462,6 +462,14 @@ div#Minh_Left {
 
 .Minh_input .input:focus {
   border: 2px solid grey;
+}
+p.Minh_name {
+  font-size: 27px;
+  font-weight: 700;
+}
+p.Minh_time {
+  color: #eb6e4b;
+  margin: 0;
 }
 
 /* Son */
