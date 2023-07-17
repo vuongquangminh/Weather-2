@@ -18,7 +18,7 @@ function currentDay() {
 
   const check = document.querySelector(".Minh_check");
 
-  let map = L.map('Minh_map')
+  let map = L.map('Tuan_map')
 
   check.onclick = () => {
     const value_input = document.querySelector(".Minh_input input").value;

@@ -128,11 +128,11 @@ p {
     color: #48484a;
 }
 /* map */
-#Minh_map {
+#Tuan_map {
   height: 300px;
   width: 500px;
 }
-div#Minh_map {
+div#Tuan_map {
   position: relative;
   flex: 2;
 }
