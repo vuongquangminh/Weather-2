@@ -316,57 +316,57 @@ const $$ = document.querySelectorAll.bind(document);
 const MENU = {
   menu: [
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Guide",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "API",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Dashboard",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Marketplace",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Pricing",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Maps",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Our Initiatives",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Partners",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Blog",
       link: "#",
     },
     {
-      class: "menu_link btn btn-secondary btnBusiness",
+      class: "Hoan_menu_link btn btn-secondary btnBusiness",
       name: "For Business",
       link: "#",
     },
     {
-      class: "menu_link",
+      class: "Hoan_menu_link",
       name: "Sign in",
       link: "./login.html",
     },
