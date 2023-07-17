@@ -134,13 +134,13 @@ function currentDay() {
     ];
     let currentDay = a.getDate() - 1;
 
-    // day = a.getDay() ;
+    day = a.getDay() - 1 ;
     // add month + day
     
     Minh_list_Time.forEach((item, index) => {
       currentDay += 1;
-      const days = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"];
-      Minh_listItem.innerHTML += `<div class="Minh_item"><p> ${days[index % days.length]}, ${months[current_Month]} ${currentDay}</p></div>`;
+      const days = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      Minh_listItem.innerHTML += `<div class="Minh_item"><p> ${days[(day + index) % days.length]}, ${months[current_Month]} ${currentDay}</p></div>`;
     });
 
     day = a.getDate();
