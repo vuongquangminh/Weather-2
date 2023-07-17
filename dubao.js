@@ -73,7 +73,7 @@ function currentDay() {
   };
 
   
-  // map()
+  // Tuan map()
 
   function getMap(lat, lon) {
     map.setView([lat, lon], 13);
@@ -134,11 +134,13 @@ function currentDay() {
     ];
     let currentDay = a.getDate() - 1;
 
+    // day = a.getDay() ;
     // add month + day
+    
     Minh_list_Time.forEach((item, index) => {
       currentDay += 1;
-      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      Minh_listItem.innerHTML += `<div class="Minh_item"><p> ${days[index]}, ${months[current_Month]} ${currentDay}</p></div>`;
+      const days = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"];
+      Minh_listItem.innerHTML += `<div class="Minh_item"><p> ${days[index % days.length]}, ${months[current_Month]} ${currentDay}</p></div>`;
     });
 
     day = a.getDate();
@@ -187,41 +189,6 @@ function currentDay() {
 }
 currentDay();
 
-
-// map
-// navigator.geolocation.getCurrentPosition(showPosition)
-// function showPosition(position) {
-
-//     let latitude = position.coords.latitude;
-//     let longitude = position.coords.longitude;
-//     console.log(latitude,longitude)
-//     var map = L.map('Minh_map')
-//     map.setView([latitude, longitude], 13);
-//     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//         maxZoom: 19,
-//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-//     }).addTo(map);
-
-//     var circle = L.circle([latitude, longitude], {
-//         color: 'red',
-//         fillColor: '#f03',
-//         fillOpacity: 0.5,
-//         radius: 300
-//     }).addTo(map);
-//     circle.bindPopup("I am here.");
-
-//     var popup = L.popup();
-//     function onMapClick(e) {
-//         popup.setLatLng(e.latlng).setContent("You clicked the map at " + e.latlng.toString()).openOn(map);
-//            let a = popup.setLatLng(e.latlng).setContent( e.latlng.toString()).openOn(map)
-//            console.log(a)
-//         //     a = a.slice(7,a.length-1)
-//         //    console.log(a)
-//     }
-    
-//     map.on('click', onMapClick);
-    
-// } 
 
 
 
