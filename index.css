@@ -627,3 +627,10 @@ li {
     width: 100%;
   }
 }
+
+
+@media (max-width:850px) {
+  #Minh_Weather{
+    padding: 0 !important;
+  }
+}

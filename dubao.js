@@ -134,8 +134,8 @@ function currentDay() {
     ];
     let currentDay = a.getDate() - 1;
 
-    day = a.getDay() - 1 ;
     // add month + day
+    day = a.getDay() - 1 ;
     
     Minh_list_Time.forEach((item, index) => {
       currentDay += 1;
